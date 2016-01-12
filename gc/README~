@@ -1,0 +1,37 @@
+Esse exercicio estressa o garbage collector criando milhares de objetos e
+segurando suas referencias por um tempo consideravel.
+
+Execute com uma restricao explicita de memoria e analise seu comportamento
+no VisualVM:
+
+  java -Xms100m -Xmx100m EstressaGC
+
+
+java -verbose:gc EstressaGC
+
+// testando full gc
+-- Quando cria o objeto, ele está na área Young (Eden). Se faltar memoria ele joga na Old. Se faltar na Old, vai para a MetaSpace e evita o PermGenSizeError. Toda vez que roda o GC, causa uma certa lentidão, por que usa mais processamento
+
+java -verbose:gc -Xmx128M -Xms128M EstressaGC
+
+- [Full GC (Ergonomics)  91340K->10555K(116736K), 0,1319687 secs]
+
+Aplicação concurrent - gc concorre em pararelo com a aplicação
+
+time java -verbose:gc -XX:+UseConcMarkSweepGC EstressaGC
+
+
+time java -verbose:gc -Xmx128M -Xms128M -XX:+UseParallelOldGC EstressaGC
+
+java 1.6.14 - criou o G1 (Humongous Allocation), que separa a memoria em regiões
+
+time java -verbose:gc -Xmx128M -Xms128M -XX:+UseG1GC EstressaGC
+
+O ideal é testar, e o melhor é com profile (trace):
+- VisualVM
+- TPTP (plugin)
+- JProfile
+
+
+
+
