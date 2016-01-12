@@ -1,0 +1,20 @@
+como testar o jit:
+
+time java -XX:+PrintCompilation Fibonacci 40
+
+Quantas vezes vai fazer a compilação. Pode ficar lento se colocar muito
+time java -XX:CompileThreshold=1 Fibonacci 20
+
+Compila sem o JIT, nenhuma otimização:
+time java -Xint:40 Fibonacci 40
+
+-Client
+
+---- client - performance
+---- server - disponibilidade
+
+// JVM trabalha em modo automático. Sobe em modo client até 
+verificar que algum método é chamado muito, e muda para o modo server
+time java -XX:+TieredCompilation -XX:+PrintCompilation Fibonacci 50
+
+
