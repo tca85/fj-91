@@ -25,14 +25,17 @@ time java -verbose:gc -Xmx128M -Xms128M -XX:+UseParallelOldGC EstressaGC
 
 java 1.6.14 - criou o G1 (Humongous Allocation), que separa a memoria em regiões
 
-time java -verbose:gc -Xmx128M -Xms128M -XX:+UseG1GC EstressaGC
+
 
 O ideal é testar, e o melhor é com profile (trace):
 - VisualVM
 - TPTP (plugin)
 - JProfile
 
+VM com muita memória. GC muito melhor
+- Azul JVM
 
+Hotspot também é boa
 
 
 

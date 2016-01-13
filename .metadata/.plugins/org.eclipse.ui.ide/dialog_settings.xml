@@ -9,8 +9,15 @@
 			<item value="/home/arq5448/FJ-91/scala"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="/home/arq5448/FJ-91/fj-91-exercicios/classloader-web.zip"/>
+			<item value="/home/arq5448/FJ-91/fj-91-exercicios/classloader.zip"/>
 			<item value="/home/arq5448/FJ-91/fj-91-exercicios/javascript.zip"/>
 			<item value=""/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 		</list>
 	</section>
 </section>
