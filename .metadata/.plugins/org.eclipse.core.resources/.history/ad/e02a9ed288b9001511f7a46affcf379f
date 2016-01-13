@@ -1,0 +1,13 @@
+package teste;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		String nome = "";
+		
+		// teste de classloader
+		boolean teste = nome.isBlank();
+
+	}
+
+}
