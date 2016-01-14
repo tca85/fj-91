@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 2 elements from project &apos;classloader-web&apos;&#x0A;- Original project: &apos;classloader-web&apos;&#x0A;- Original elements:&#x0A;     br.com.caelum.fj91.classloader.servlet.Teste.java&#x0A;     br.com.caelum.fj91.classloader.servlet.Teste2.java" description="Delete elements" element1="/src&lt;br.com.caelum.fj91.classloader.servlet{Teste2.java" element2="/src&lt;br.com.caelum.fj91.classloader.servlet{Teste.java" elements="2" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1452815235858" subPackages="false" version="1.0"/>
+</session>
