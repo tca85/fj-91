@@ -96,8 +96,6 @@ public class Conta {
 	/**
 	 * --- criar uma interface e fazer o TributaUsoDoChequeEspecial e o DescontaJuros
 	 * utilizarem ela. Após isso, usar ela no argumento do método, para ter só um
-	 * - polimorfismo
-	 * --------- Strategy design pattern
 	 * 
 	 * 
 	 * Desconta o valor devido do tributo
