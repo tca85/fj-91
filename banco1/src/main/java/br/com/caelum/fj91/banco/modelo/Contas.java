@@ -8,55 +8,56 @@ import java.util.Set;
 /**
  * Organiza as contas do banco por semestre de abertura
  * 
- * acoplar somente a objetos bastante estáveis
- * - Desvantagem: pega várias coisas que não queremos: remove, clear...
+ * acoplar somente a objetos bastante estáveis 
+ * - Desvantagem: pega várias coisas que não queremos: remove, clear... 
  * - o ideal é não ter extends HashSet<Conta>
- * - evite herança e favoreça composição
+ * - evite herança e favoreça composição 
  * - como fazer? criar um atributo do tipo HashSet
  * 
  */
-public class Contas{
-	
+public class Contas {
+
 	private Set<Conta> listaContas = new HashSet<Conta>();
 	private int totalContasPrimeiroSemestre = 0;
 	private int totalContasSegundoSemestre = 0;
-	
+
 	public boolean add(Conta conta) {
 		int mes = conta.getDataAbertura().get(Calendar.MONTH);
-		
+
 		if (mes < Calendar.JUNE) {
 			totalContasPrimeiroSemestre++;
 		} else {
 			totalContasSegundoSemestre++;
 		}
-		
+
 		return listaContas.add(conta);
 	}
 
 	public boolean addAll(Collection<? extends Conta> c) {
 		for (Conta conta : c) {
 			int mes = conta.getDataAbertura().get(Calendar.MONTH);
-			
+
 			if (mes < Calendar.JUNE) {
 				totalContasPrimeiroSemestre++;
 			} else {
 				totalContasSegundoSemestre++;
 			}
 		}
-		
+
 		return listaContas.addAll(c);
 	}
-	
+
 	public int getTotalContasPrimeiroSemestre() {
 		return totalContasPrimeiroSemestre;
 	}
-	
+
 	public int getTotalContasSegundoSemestre() {
 		return totalContasSegundoSemestre;
 	}
 
 	/**
 	 * ctrl + 3, delegate
+	 * 
 	 * @return
 	 */
 	public int size() {
