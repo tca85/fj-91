@@ -1,0 +1,18 @@
+package br.com.caelum.fj91.banco.teste;
+
+import java.util.List;
+
+import br.com.caelum.fj91.banco.modelo.Conta;
+import br.com.caelum.fj91.banco.persistencia.Dao;
+
+public class RelatorioController {
+	
+	public List<Conta> contasAbertas(int ano){
+		Dao dao = new Dao();
+		
+		//List<Conta> contas = 
+		
+		
+		return null;
+	}
+}

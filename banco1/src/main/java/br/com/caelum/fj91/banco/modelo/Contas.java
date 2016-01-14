@@ -3,39 +3,48 @@ package br.com.caelum.fj91.banco.modelo;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Organiza as contas do banco por semestre de abertura
+ * 
+ * acoplar somente a objetos bastante estáveis
+ * - Desvantagem: pega várias coisas que não queremos: remove, clear...
+ * - o ideal é não ter extends HashSet<Conta>
+ * - evite herança e favoreça composição
+ * - como fazer? criar um atributo do tipo HashSet
+ * 
  */
-public class Contas extends HashSet<Conta> {
-
+public class Contas{
+	
+	private Set<Conta> listaContas = new HashSet<Conta>();
 	private int totalContasPrimeiroSemestre = 0;
 	private int totalContasSegundoSemestre = 0;
 	
-	@Override
 	public boolean add(Conta conta) {
 		int mes = conta.getDataAbertura().get(Calendar.MONTH);
-		if (mes < 6) {
+		
+		if (mes < Calendar.JUNE) {
 			totalContasPrimeiroSemestre++;
 		} else {
 			totalContasSegundoSemestre++;
 		}
 		
-		return super.add(conta);
+		return listaContas.add(conta);
 	}
 
-	@Override
 	public boolean addAll(Collection<? extends Conta> c) {
 		for (Conta conta : c) {
 			int mes = conta.getDataAbertura().get(Calendar.MONTH);
-			if (mes < 6) {
+			
+			if (mes < Calendar.JUNE) {
 				totalContasPrimeiroSemestre++;
 			} else {
 				totalContasSegundoSemestre++;
 			}
 		}
 		
-		return super.addAll(c);
+		return listaContas.addAll(c);
 	}
 	
 	public int getTotalContasPrimeiroSemestre() {
@@ -45,5 +54,12 @@ public class Contas extends HashSet<Conta> {
 	public int getTotalContasSegundoSemestre() {
 		return totalContasSegundoSemestre;
 	}
-	
+
+	/**
+	 * ctrl + 3, delegate
+	 * @return
+	 */
+	public int size() {
+		return listaContas.size();
+	}
 }
