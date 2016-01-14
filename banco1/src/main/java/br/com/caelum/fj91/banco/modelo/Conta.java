@@ -97,7 +97,9 @@ public class Conta {
 	 * --- criar uma interface e fazer o TributaUsoDoChequeEspecial e o DescontaJuros
 	 * utilizarem ela. Após isso, usar ela no argumento do método, para ter só um
 	 * - polimorfismo
-	 * --------- Strategy design pattern
+	 * --------->>> Strategy design pattern
+	 * 
+	 * Não dá para ter acoplamento zero. O ideal é diminuir ao máximo
 	 * 
 	 * 
 	 * Desconta o valor devido do tributo
