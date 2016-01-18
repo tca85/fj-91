@@ -13,7 +13,7 @@ public class TestaBuilder {
 					.comNumero(456)
 					.comDataDeAbertura(2011, 10, 29)
 					.eDepositoInicial("100")
-					.toConta();
+					.toConta(); 
 
 		conta.saca(new BigDecimal("50"));
 		
