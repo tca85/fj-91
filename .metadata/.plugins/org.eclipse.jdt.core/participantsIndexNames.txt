@@ -1,3 +1,5 @@
 INDEX VERSION 1.127
 /home/arq5448/FJ-91/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1166314646.index
 /banco2/src/main/java
+/home/arq5448/FJ-91/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/829160118.index
+/cdi/src/main/java
